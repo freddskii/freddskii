@@ -1,5 +1,5 @@
 # 💫 About Me:
-test<br>
+Hi, I'm Alfred. Nice to meet you!
 
 
 ## 🌐 Socials:
@@ -20,5 +20,7 @@ test<br>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=freddskii&icon=0&color=0)](https://visitcount.itsvg.in)
+
+![](./profile-3d-contrib/profile-night-green.svg)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
