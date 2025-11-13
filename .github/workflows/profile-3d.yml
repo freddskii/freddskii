@@ -41,3 +41,17 @@ jobs:
           git add -A
           git commit -m "generated" || echo "No changes to commit"
           git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
+
+      - name: Debug secrets
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "❌ GH_TOKEN is empty, falling back to default GITHUB_TOKEN"
+            export GH_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+            echo "Fallback GH_TOKEN length: ${#GH_TOKEN}"
+          else
+            echo "✅ GH_TOKEN loaded, length: ${#GH_TOKEN}"
+          fi
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
