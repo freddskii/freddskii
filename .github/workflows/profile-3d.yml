@@ -6,7 +6,6 @@ on:
     # runs once every day at a chosen time
     - cron: "0 18 * * *"   # Example: 18:00 UTC (adjust as desired)
  
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,14 +16,11 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-
-      - uses: gumbobrot/github-profile-3d-contrib@0.7.2
+      - name: Generate 3D Contribution Graph
+        uses: gumbobrot/github-profile-3d-contrib@0.7.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-
-      - name: Pull latest changes
-        run: git pull --force origin main
 
       - name: Commit & Push
         env:
@@ -35,4 +31,3 @@ jobs:
           git add -A
           git commit -m "generated" || echo "No changes to commit"
           git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
-
