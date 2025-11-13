@@ -1,10 +1,11 @@
 name: GitHub-Profile-3D-Contrib-fixed
 
 on:
+  workflow_dispatch:     # allows manual trigger
   schedule:
     # runs once every day at a chosen time
     - cron: "0 18 * * *"   # Example: 18:00 UTC (adjust as desired)
-  workflow_dispatch:     # allows manual trigger
+ 
 
 jobs:
   build:
