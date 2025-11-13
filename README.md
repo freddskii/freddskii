@@ -1,6 +1,5 @@
 # 💫 About Me:
-Hi, I'm Alfred, I'm an undergradute student in Informatics Engineering at Institut Teknologi Sepuluh Nopember. I have 
-
+Hi, I'm Alfred, I'm an undergradute student in Informatics Engineering at Institut Teknologi Sepuluh Nopember. I'm interested in Web Development and Cyber Security. Feel free to reach out through the links below!
 
 ## 🌐 Socials:
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/alfred.haryanto) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:alfred.haryanto.2006@gmail.com) 
