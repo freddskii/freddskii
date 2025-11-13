@@ -15,7 +15,7 @@ jobs:
 
       - uses: gumbobrot/github-profile-3d-contrib@0.7.2
         env:
-          GITHUB_TOKEN: ${{ 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 }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
       - name: Pull latest changes
