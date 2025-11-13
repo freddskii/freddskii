@@ -33,6 +33,7 @@ jobs:
           git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
 
       - name: Debug secrets
-        run: echo "GH_TOKEN length: ${#GH_TOKEN}"
+        run: |
+          echo "GH_TOKEN length: ${#GH_TOKEN}"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
