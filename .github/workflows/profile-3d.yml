@@ -3,9 +3,8 @@ name: GitHub-Profile-3D-Contrib-fixed
 on:
   workflow_dispatch:     # allows manual trigger
   schedule:
-    # runs once every day at a chosen time
     - cron: "0 18 * * *"   # Example: 18:00 UTC (adjust as desired)
- 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,6 +14,17 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+
+      - name: Debug secrets
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "❌ GH_TOKEN is empty"
+          else
+            echo "✅ GH_TOKEN loaded, length: ${#GH_TOKEN}"
+          fi
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Generate 3D Contribution Graph
         uses: gumbobrot/github-profile-3d-contrib@0.7.2
@@ -31,9 +41,3 @@ jobs:
           git add -A
           git commit -m "generated" || echo "No changes to commit"
           git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
-
-      - name: Debug secrets
-        run: |
-          echo "GH_TOKEN length: ${#GH_TOKEN}"
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
